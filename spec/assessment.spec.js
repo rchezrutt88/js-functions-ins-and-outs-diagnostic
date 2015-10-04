@@ -65,15 +65,13 @@ describe('array creation', function() {
 
 describe('method addition', function() {
 
-  var obj = {};
-  var propertyName = 'method';
-  var method = function() {};
-
-  var returnedObj;
-
   describe('with existing object', function() {
 
-    returnedObj = assessment.addMethod(propertyName, method, obj);
+    var obj = {};
+    var propertyName = 'method';
+    var method = function() {};
+
+    var returnedObj = assessment.addMethod(propertyName, method, obj);
 
     it('returns that object', function() {
       expect(returnedObj).toBe(obj);
@@ -91,7 +89,11 @@ describe('method addition', function() {
 
   describe('without existing object', function() {
 
-    returnedObj = assessment.addMethod(propertyName, method);
+    var obj = {};
+    var propertyName = 'method';
+    var method = function() {};
+
+    var returnedObj = assessment.addMethod(propertyName, method);
 
     it('returns a new object', function() {
       expect(typeof returnedObj).toBe('object');
